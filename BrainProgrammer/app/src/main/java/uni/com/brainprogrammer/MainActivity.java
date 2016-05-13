@@ -1,6 +1,7 @@
 package uni.com.brainprogrammer;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.Configuration;
@@ -36,7 +37,7 @@ import java.util.List;
  * href="http://developer.android.com/guide/topics/ui/settings.html">Settings
  * API Guide</a> for more information on developing a Settings UI.
  */
-public class MainActivity extends PreferenceActivity {
+public class MainActivity extends Activity {
 
 
 
