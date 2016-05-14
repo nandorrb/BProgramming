@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
@@ -56,14 +57,18 @@ public class MainActivity extends Activity {
             public void onClick(View arg0) {
                 if(b.isChecked()){
                     //Button is ON
-                    int duration = Toast.LENGTH_SHORT;
+                 /* int duration = Toast.LENGTH_SHORT;
                     Toast toast;
                     toast = Toast.makeText(MainActivity.this, TextToToast.getText().toString(), duration);
                     toast.show();
-
+                */
+                    Intent intent = new Intent(getBaseContext(),BackgroundService.class);
+                    intent.putExtra("data", TextToToast.getText().toString());
+                    startService(intent);
                 }
-                else{
 
+                else{
+                    stopService(new Intent(getBaseContext(),BackgroundService.class));
                 }
                 //Button is OFF
                 // Do Something
